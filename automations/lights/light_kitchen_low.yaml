@@ -1,0 +1,28 @@
+- id: "Lys: kjøkkenet lav"
+  alias: "Lys: kjøkkenet lav"
+  trigger:
+    - platform: state
+      entity_id: sensor.multisensor_kitchen_burglar
+      to: '0'
+      for:
+        minutes: 1
+  # condition:
+  #   condition: and
+  #   conditions:
+  #     - condition: state
+  #       entity_id: sensor.multisensor_kitchen_burglar
+  #       state: '0'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: group.kjokken_lys
+        brightness_pct: !secret brightness_low
+        transition: !secret transition_low
+        # color_temp: !secret kjkken_color_temp_low
+        # color_temp: [states.sensor.circadian_values.attributes.rgb_color]
+    - service: light.turn_on
+      data:
+        entity_id: light.kjkken_sokkellys
+        brightness_pct: !secret brightness_low
+        transition: !secret transition_low
+        # effect: random

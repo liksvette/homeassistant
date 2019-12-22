@@ -1,0 +1,11 @@
+# - id: 'Wallmote: god natt'
+#   alias: 'Wallmote: god natt'
+#   trigger:
+#     - event_type: zwave.scene_activated
+#       platform: event
+#       event_data:
+#         entity_id: zwave.wallmote_entre
+#         scene_id: 2
+#         scene_data: 1
+#   action:
+#     service: script.god_natt

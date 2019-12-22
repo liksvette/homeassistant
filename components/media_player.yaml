@@ -1,0 +1,3 @@
+  - platform: webostv
+    host: 10.0.10.71
+    name: TV kjelleren

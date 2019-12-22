@@ -1,0 +1,56 @@
+  # - platform: template
+  #   sensors:
+  #     stovemaskin_battery:
+  #       value_template: >-
+  #         {%- if states.vacuum.stvemaskin -%}
+  #           {{ states.vacuum.stvemaskin.attributes.battery_level }}
+  #         {%- else -%}
+  #           n/a
+  #         {%- endif -%}
+  #       unit_of_measurement: '%'
+  #       entity_id: vacuum.stvemaskin
+  #       friendly_name: "Battery Støvemaskin"
+
+# - platform: template
+#   sensors:
+#     stovemaskin_battery:
+#       value_template: '{{ states.vacuum.stvemaskin.attributes.battery_level }}'
+#       friendly_name: 'Battery Støvemaskin'
+#       entity_id: vacuum.stvemaskin
+#       unit_of_measurement: '%'
+#       icon_template: >-
+#         {% set battery_level = states('sensor.stovemaskin_battery')|int('unknown') %}
+#         {% set battery_round = (battery_level|int / 10)|int * 10 %}
+#         {% if battery_level == 'unknown' %}
+#           mdi:battery-unknown
+#         {% else %}
+#           {% if battery_round >= 100 %}
+#             mdi:battery
+#           {% elif battery_round > 0 %}
+#             mdi:battery-{{ battery_round }}
+#           {% else %}
+#             mdi:battery-alert
+#           {% endif %}
+#         {% endif %}
+
+# - platform: template
+#   sensors:
+#     idlock_battery:
+#       value_template: '{{ states.zwave.front_door_lock_101.attributes.battery_level }}'
+#       friendly_name: 'Battery IDLock'
+#       entity_id: zwave.front_door_lock_101
+#       unit_of_measurement: '%'
+#       icon_template: >-
+#         {% set battery_level = states('sensor.idlock_battery')|int('unknown') %}
+#         {% set battery_round = (battery_level|int / 10)|int * 10 %}
+#         {% if battery_level == 'unknown' %}
+#           mdi:battery-unknown
+#         {% else %}
+#           {% if battery_round >= 100 %}
+#             mdi:battery
+#           {% elif battery_round > 0 %}
+#             mdi:battery-{{ battery_round }}
+#           {% else %}
+#             mdi:battery-alert
+#           {% endif %}
+#         {% endif %}

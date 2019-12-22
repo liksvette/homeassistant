@@ -1,0 +1,23 @@
+- id: "Vacuum: clean when away"
+  alias: "Vacuum: clean when away"
+  trigger:
+    - platform: state
+      entity_id: group.de_voksne
+      to: 'not_home'
+      for:
+        minutes: 30
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.dor_kjeller_sensor
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.vacuum_completed
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.vacuum_mode
+        state: 'on'
+  action:
+    service: vacuum.turn_on
+    entity_id: vacuum.stvemaskin

@@ -1,0 +1,11 @@
+# - id: 'Wallmote: lukke garasjen'
+#   alias: 'Wallmote: lukke garasjen'
+#   trigger:
+#     - event_type: zwave.scene_activated
+#       platform: event
+#       event_data:
+#         entity_id: zwave.wallmote_entre
+#         scene_id: 1
+#         scene_data: 0
+#   action:
+#     service: script.sikker_garasjelukker

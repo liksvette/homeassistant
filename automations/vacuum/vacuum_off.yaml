@@ -1,0 +1,16 @@
+- id: "Vacuum: go home"
+  alias: "Vacuum: go home"
+  trigger:
+    - platform: state
+      entity_id: group.de_voksne
+      from: 'not_home'
+      to: 'home'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: vacuum.stvemaskin
+        state: 'on'
+  action:
+    service: vacuum.return_to_base
+    entity_id: vacuum.stvemaskin

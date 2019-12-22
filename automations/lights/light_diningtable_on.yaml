@@ -1,0 +1,12 @@
+- id: "Lys: spisebordet på"
+  alias: "Lys: spisebordet på"
+  trigger:
+    - platform: state
+      entity_id: sensor.multisensor_dining_table_burglar
+      to: '8'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.spisebordet
+        brightness_pct: !secret brightness_high
+        transition: !secret transition_high

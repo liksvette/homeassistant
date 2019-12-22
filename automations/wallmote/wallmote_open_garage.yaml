@@ -1,0 +1,12 @@
+# - id: 'Wallmote: åpne garasjen'
+#   alias: 'Wallmote: åpne garasjen'
+#   trigger:
+#     - event_type: zwave.scene_activated
+#       platform: event
+#       event_data:
+#         entity_id: zwave.wallmote_entre
+#         scene_id: 1
+#         scene_data: 1
+#   action:
+#     service: cover.open_cover
+#     entity_id: cover.garage_door_switch

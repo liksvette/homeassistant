@@ -1,0 +1,8 @@
+- id: "Lys: Nattlys gang"
+  alias: "Lys: Nattlys gang"
+  trigger:
+    - platform: time
+      at: '20:00:00'
+  action:
+    service: input_boolean.turn_on
+    entity_id: input_boolean.nightlight_mode

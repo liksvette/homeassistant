@@ -1,0 +1,9 @@
+- id: "Notification: garasje push retry"
+  alias: "Notification: garasje push retry"
+  trigger:
+    platform: event
+    event_type: ios.notification_action_fired
+    event_data:
+      actionName: RETRY
+  action:
+    service: script.sikker_garasjelukker

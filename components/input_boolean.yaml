@@ -1,0 +1,20 @@
+# - sikker_garasjeknapp:
+#   name: Garasjeporten
+#   icon: mdi:garage
+
+vacuum_completed:
+  name: "Vacuum completed"
+  #initial: off
+nightlight_mode:
+  name: "Nightlight mode"
+
+eco_mode:
+  name: "Eco Mode"
+
+vacuum_mode:
+  name: "Støvemaskin aktiv"
+  initial: 'on'
+
+osmosis_mode:
+  name: "Osmosemaskinen aktiv"
+  initial: 'on'

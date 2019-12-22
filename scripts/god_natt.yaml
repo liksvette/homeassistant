@@ -1,0 +1,28 @@
+god_natt:
+  sequence:
+    - service: automation.turn_off
+      entity_id: group.auto_lys_1ste
+    - service: light.turn_off
+      data:
+        entity_id: group.lys_forste_etasje, group.lys_kjelleren
+    - service: switch.turn_off
+      data:
+        entity_id: group.lys_forste_etasje, group.lys_kjelleren
+    - service: lock.lock
+      data:
+        entity_id: lock.front_door_lock_locked
+    - service: light.turn_on
+      entity_id: light.kjkken_sokkellys
+      data:
+        brightness: 15
+        rgb_color: [105,150,176]
+    - service: media_player.turn_off
+      entity_id: group.media_players
+    #   entity_id: media_player.forsterker_stua
+    # - service: media_player.turn_off
+      # entity_id: media_player.ue46es8005_ue46es8005
+    - service: script.sikker_garasjelukker
+    - service: script.nattlys_gang
+    - service: script.floor_heat_stue_gang_eco
+    - service: script.floor_heat_kjokken_spisebord_eco
+    - service: script.floor_heat_musikkrom_eco

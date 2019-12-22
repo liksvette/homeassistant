@@ -1,0 +1,7 @@
+- id: "Master: skru på automasjon"
+  alias: "Master: skru på automasjon"
+  trigger:
+    - platform: time
+      at: '06:30:00'
+  action:
+    - service: script.tilbakestill

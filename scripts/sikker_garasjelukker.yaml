@@ -1,0 +1,30 @@
+sikker_garasjelukker:
+  sequence:
+    - condition: state
+      entity_id: cover.garage_door_switch
+      state: 'open'
+    - service: cover.close_cover
+      entity_id: cover.garage_door_switch
+    - delay:
+        seconds: 60
+    - condition: state
+      entity_id: cover.garage_door_switch
+      state: 'open'
+    - service: cover.close_cover
+      entity_id: cover.garage_door_switch
+    - delay:
+        seconds: 60
+    - condition: state
+      entity_id: cover.garage_door_switch
+      state: 'open'
+    - service: notify.ios_tommys_iphone
+      data:
+        title: "Det var da som bare f..."
+        message: "Garasjeporten er fremdeles åpen"
+        data:
+          push:
+            badge: 5
+            category: "GARASJEPORTEN"
+          # action_data:
+          #   service: light.turn_off
+          #   entity_id: light.stue

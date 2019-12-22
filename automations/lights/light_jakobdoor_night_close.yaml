@@ -1,0 +1,15 @@
+- id: "Lys: Jakob mørk dør lukket" #Skrur ned lyset til 1% etter kl 19
+  alias: "Lys: Jakob mørk dør lukket"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_jakob_sensor
+      to: 'off'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.nightlight_mode
+        state: 'on'
+  action:
+    service: light.turn_on
+    entity_id: light.taklys_2etg_gang

@@ -1,0 +1,14 @@
+nattlys_gang:
+  sequence:
+    - condition: state
+      entity_id: input_boolean.nightlight_mode
+      state: 'off'
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.nightlight_mode
+    - service: light.turn_on
+      entity_id: group.gang_lys
+      data:
+        brightness_pct: !secret gang_nattlys_brightness
+        color_temp: !secret gang_nattlys_color
+        transition: !secret gang_nattlys_transition

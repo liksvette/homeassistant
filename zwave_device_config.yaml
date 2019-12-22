@@ -1,0 +1,6 @@
+cover.id_lock_id_lock_101_switch:
+  ignored: true
+  polling_intensity: 0
+sensor.termostat_kjkken_og_spisebord_energy:
+  ignored: false
+  polling_intensity: 1

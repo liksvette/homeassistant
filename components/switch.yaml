@@ -1,0 +1,39 @@
+  - platform: skybell
+    monitored_conditions:
+      - do_not_disturb
+      - motion_sensor
+  # - switch:
+  #   platform: rfxtrx
+  #   automatic_add: True
+  - platform: circadian_lighting
+    name: general
+    disable_brightness_adjust: true
+    lights_ct:
+      - light.kjokkenet
+      - light.kjokken_sokkel
+      - light.spisebordet
+      - light.stue
+      - light.stuehoyttalere
+      - light.kontoret_tak
+
+  - platform: circadian_lighting
+    name: hallway
+    disable_brightness_adjust: false
+    min_brightness: 1
+    max_brightness: 64
+    lights_ct:
+      - light.taklys_1etg_gang
+      - light.taklys_2etg_gang
+  - platform: template
+  #  friendly_name: 'Automatisk påfylling'
+    switches:
+      automatic_refill:
+        value_template: "{{ is_state('input_boolean.osmosis_mode', 'on') }}"
+        turn_on:
+          service: input_boolean.turn_on
+          data:
+            entity_id: input_boolean.osmosis_mode
+        turn_off:
+          service: input_boolean.turn_off
+          data:
+            entity_id: input_boolean.osmosis_mode

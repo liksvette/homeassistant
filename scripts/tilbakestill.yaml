@@ -1,0 +1,7 @@
+tilbakestill:
+  sequence:
+    - service: automation.turn_on
+      entity_id: group.auto_lys_1ste
+    - service: script.morgenlys_gang
+    - service: script.floor_heat_kjokken_spisebord_normal
+    - service: script.floor_heat_stue_gang_normal

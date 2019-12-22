@@ -1,0 +1,9 @@
+# autolock_disable:
+#   sequence:
+#     - service: zwave.set_config_parameter
+#       data_template: {
+#         "node_id": 10,
+#         "parameter": 1,
+#         "size": 1,
+#         "value": 0
+#         }

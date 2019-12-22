@@ -1,0 +1,33 @@
+- id: "Lys: Lys første etasje av"
+  alias: "Lys: Lys første etasje av"
+  trigger:
+    - platform: state
+      entity_id: sensor.multisensor_dining_table_burglar
+      for:
+        minutes: 45
+      to: '0'
+    - platform: state
+      entity_id: sensor.multisensor_kitchen_burglar
+      for:
+        minutes: 45
+      to: '0'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.multisensor_dining_table_burglar
+        state: '0'
+      - condition: state
+        entity_id: ensor.multisensor_kitchen_burglar
+        state: '0'
+      - condition: state
+        entity_id: sensor.multisensor_living_room_burglar
+        state: '0'
+      - condition: state
+        entity_id: group.de_voksne
+        state: 'away'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: group.lys_forste_etasje
+        transition: !secret transition_low

@@ -1,0 +1,15 @@
+- id: "Lys: kjellerstue på"
+  alias: "Lys: kjellerstue på"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_basement_sensor
+      to: 'on'
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.library_shelf_light_switch
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.kjellerstua

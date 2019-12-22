@@ -1,0 +1,29 @@
+- name: Home
+  icon: "mdi:home-outline"
+  latitude: !secret latitude_home
+  longitude: !secret longitude_home
+  radius: 20
+
+- name: !secret work_name
+  icon: "mdi:briefcase"
+  latitude: !secret latitude_work
+  longitude: !secret longitude_work
+  radius: 200
+
+- name: "Majorstua T-bane"
+  icon: mdi:subway
+  latitude: 59.930114
+  longitude: 10.714866
+  radius: 200
+
+- name: Prix
+  icon: mdi:store
+  latitude: !secret latitude_prix
+  longitude: !secret longitude_prix
+  radius: 25
+
+- name: Meny
+  icon: mdi:store
+  latitude: !secret latitude_meny
+  longitude: !secret longitude_meny
+  radius: 50

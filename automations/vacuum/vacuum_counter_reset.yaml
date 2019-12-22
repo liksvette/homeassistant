@@ -1,0 +1,8 @@
+- id: "Vacuum: reset counter"
+  alias: "Vacuum: reset counter"
+  trigger:
+    - platform: time
+      at: '08:00:00'
+  action:
+    service: input_boolean.turn_off
+    entity_id: input_boolean.vacuum_completed

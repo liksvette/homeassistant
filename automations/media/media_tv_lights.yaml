@@ -1,0 +1,38 @@
+# - id: "Media: TV-lys"
+#   alias: "Media: TV-lys"
+#   trigger:
+#     - platform: state
+#       entity_id: media_player.ue46es8005_ue46es8005
+#       state: 'on'
+#     - platform: numeric_state
+#       entity_id: sensor.multisensor_stua_luminance
+#       below: 40
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: numeric_state
+#         entity_id: sensor.multisensor_stua_luminance
+#         below: 40
+#       - condition: state
+#         entity_id: media_player.ue46es8005_ue46es8005
+#         state: 'on'
+#   action:
+#     service: script.tv_lys
+#
+# - id: "Media: TV-lys av"
+#   alias: "TV-lys av"
+#   trigger:
+#     - platform: state
+#       entity_id: media_player.ue46es8005_ue46es8005
+#       state: 'off'
+#       for:
+#         minutes: 5
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: state
+#         entity_id: group.auto_lys_1ste
+#         state: 'on'
+#   action:
+#     service: automation.turn_on
+#     entity_id: group.auto_lys_1ste

@@ -1,0 +1,235 @@
+default_view:
+  view: yes
+  icon: mdi:home
+  entities:
+    - group.modes
+    - group.lys_forste_etasje
+    - group.lys_kjelleren
+    - group.openers
+    - group.bilen
+
+lysbrytere:
+  name: Lysbrytere
+  view: yes
+  icon: mdi:lightbulb
+  entities:
+    - switch.garasjelys_switch
+    - switch.library_shelf_light_switch
+    - switch.soverom_i_t
+    - group.all_lights
+
+car:
+  name: Bilen
+  view: yes
+  icon: mdi:car
+  entities:
+    - group.volkswagenswitches
+    - group.volkswagensensors
+    - group.volkswagenlocation
+
+# media_players:
+#   name: Media
+#   icon: mdi:television-classic
+#   view: yes
+#   entities:
+#     - group.media_stua
+#     - group.media_kjelleren
+
+climate:
+  name: Termostater
+  icon: mdi:oil-temperature
+  view: yes
+  entities:
+    - climate.thermostat_dining_room_heating
+    - climate.thermostat_living_room_heating
+    - climate.thermostat_music_room_heating
+    - climate.thermostat_library_heating
+
+automations_scripts:
+  name: automation
+  view: yes
+  icon: mdi:home-automation
+  entities:
+    - group.all_automations
+    - group.all_scripts
+
+debug:
+  name: Debug
+  view: yes
+  icon: mdi:bug
+  entities:
+    - group.all_automations
+    - group.all_scripts
+    - group.all_switches
+    - group.all_covers
+    - group.all_locks
+    - group.all_lights
+    - group.all_vacuum_cleaners
+    - group.batteries
+    - group.de_voksne
+    - group.input_booleans
+
+modes:
+  name: Husoppsett
+  control: hidden
+  entities:
+    - script.tv_lys
+    - script.tilbakestill
+    - script.god_natt
+
+input_booleans:
+  name: "Input Booleans"
+  entities:
+    - input_boolean.nightlight_mode
+    - input_boolean.vacuum_completed
+    - input_boolean.eco_mode
+    - input_boolean.vacuum_mode
+    - input_boolean.osmosis_mode
+
+#Master lyspaneler
+lys_forste_etasje:
+  name: Lys, første
+  entities:
+      - group.spisebord_lys
+      - group.kjokken_lys
+      - group.stue_lys
+
+lys_kjelleren:
+  name: Lys, kjelleren
+  entities:
+    - switch.library_shelf_light_switch
+    - light.musikkrommet
+    - light.kjellerstua
+
+
+###Åpnere###
+openers:
+  name: Åpnere
+  entities:
+    - lock.front_door_lock_locked
+    - cover.garage_door_switch
+
+###Batterier###
+batteries:
+  name: Batterier
+  icon: mdi:battery
+  entities:
+    - sensor.idlock_battery
+    - sensor.multisensor_kitchen_battery
+    - sensor.multisensor_dining_table_battery
+    - sensor.multisensor_living_room_battery
+    - sensor.stovemaskin_battery
+    - sensor.tommys_iphone_battery_level
+    - sensor.ingvils_iphone_battery_level
+    - sensor.wvwzzzauzfw902401_battery_level
+
+###Lys-lokasjoner###
+spisebord_lys:
+  name: Spisebordet
+  entities:
+    - light.spisebordet
+
+kjokken_lys:
+  name: Kjøkkenet
+  entities:
+    - light.kjokkenet
+    - light.kjokkenbenk_led
+
+stue_lys:
+  name: Stua
+  entities:
+    - light.stue
+    - light.stuehoyttalere
+
+utelys:
+  name: Utelys
+  entities: light.utendors
+
+auto_lys_1ste:
+  name: "Automasjon lys 1. etasje"
+  entities: automation.lys_kjokkenet_lav, automation.lys_kjokkenet_pa, automation.lys_spisebordet_lav, automation.lys_spisebordet_pa, automation.lys_stua_lav, automation.lys_stua_pa
+
+gang_lys:
+  name: ganglys
+  entities:
+    - light.taklys_1etg_gang
+    - light.taklys_2etg_gang
+
+de_voksne:
+  name: De voksne
+  entities:
+    - device_tracker.berithjmsiphone
+    - device_tracker.frankhjmsiphone
+    - device_tracker.ingvilsiphone
+    - device_tracker.martinresiphone
+    - device_tracker.siljesiphone
+    - device_tracker.sonjasiniphone
+    - device_tracker.tommysiphone
+    - device_tracker.monicasniphone2
+    - device_tracker.olashansiphone3
+    - device_tracker.annasiphone
+    - device_tracker.baristelefon
+    - device_tracker.marmidsiphone
+    - device_tracker.jrgensiphone
+
+media_stua:
+  name: Media, stua
+  icon: mdi:television_classic
+  entities:
+    - media_player.ue46es8005_ue46es8005
+    - media_player.forsterker_stua
+    - media_player.chromecast_stua
+media_kjelleren:
+  name: Media, kjelleren
+  icon: mdi:television_classic
+  entities:
+    - media_player.tv_kjelleren
+    - media_player.forsterker_kjelleren
+
+ferielys:
+  name: Ferielys
+  entities:
+    - automation.lys_ferielys_av
+    - automation.lys_ferielys_pa
+
+###Bil###
+bilen:
+  name: Bilen
+  control: hidden
+  entities:
+    - switch.WVWZZZAUZFW902401_climatisation
+    - sensor.WVWZZZAUZFW902401_battery_level
+
+volkswagenswitches:
+    name: Volkswagen Switches
+    control: hidden
+    entities:
+        - switch.WVWZZZAUZFW902401_charging
+        - switch.WVWZZZAUZFW902401_climatisation
+        - switch.WVWZZZAUZFW902401_window_heater
+        - lock.WVWZZZAUZFW902401_doors_locked
+        - lock.WVWZZZAUZFW902401_trunk_locked
+
+volkswagensensors:
+    name: Volkswagen Information
+    control: hidden
+    entities:
+        - sensor.WVWZZZAUZFW902401_battery_level
+        - sensor.WVWZZZAUZFW902401_fuel_level
+        - sensor.WVWZZZAUZFW902401_charging_time_left
+        - sensor.WVWZZZAUZFW902401_odometer
+        - sensor.WVWZZZAUZFW902401_electric_range
+        - sensor.WVWZZZAUZFW902401_combustion_range
+        - sensor.WVWZZZAUZFW902401_combined_range
+        - sensor.WVWZZZAUZFW902401_last_connected
+        - sensor.WVWZZZAUZFW902401_service_inspection
+        - sensor.WVWZZZAUZFW902401_climatisation_target_temperature
+        - binary_sensor.WVWZZZAUZFW902401_parking_light
+        - binary_sensor.WVWZZZAUZFW902401_external_power
+        - binary_sensor.WVWZZZAUZFW902401_climatisation_without_external_power
+
+volkswagenlocation:
+    name: Volkswagen Location
+    control: hidden
+    entities:
+        - device_tracker.WVWZZZAUZFW902401

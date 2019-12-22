@@ -1,0 +1,9 @@
+- id: "Lys: garasjeporten skrur av lyset"
+  alias: "Lys: garasjeportlys av"
+  trigger:
+    - platform: state
+      entity_id: cover.garage_door_switch
+      to: closed
+  action:
+    service: switch.turn_off
+    entity_id: switch.garage_light_switch

@@ -1,0 +1,64 @@
+floor_heat_kjokken_spisebord_normal:
+  sequence:
+    - service: zwave.set_config_parameter
+      data_template:
+        {
+        "node_id": 32,
+        "parameter": 9, #PLo setting
+        "value": !secret floor_heat_power_level_normal
+        }
+    - service: zwave.set_config_parameter
+      data_template:
+        {
+        "node_id": 32,
+        "parameter": 10, #CO setpoint
+        "value": !secret floor_heat_temp_normal
+        }
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.thermostat_dining_room_heating
+        operation_mode: "heat"
+
+###Stue/gang
+floor_heat_stue_gang_normal:
+  sequence:
+    - service: zwave.set_config_parameter
+      data_template:
+        {
+        "node_id": 33,
+        "parameter": 9, #PLo setting
+        "value": !secret floor_heat_power_level_normal
+        }
+    - service: zwave.set_config_parameter
+      data_template:
+        {
+        "node_id": 33,
+        "parameter": 10, #CO setpoint
+        "value": !secret floor_heat_temp_normal
+        }
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.thermostat_living_room_heating
+        operation_mode: "heat"
+
+###Musikkrom###
+floor_heat_musikkrom_normal:
+  sequence:
+    # - service: zwave.set_config_parameter
+    #   data_template:
+    #     {
+    #     "node_id": 30,
+    #     "parameter": 9, #PLo setting
+    #     "value": !secret floor_heat_power_level_normal
+    #     }
+    - service: zwave.set_config_parameter
+      data_template:
+        {
+        "node_id": 30,
+        "parameter": 10, #CO setpoint
+        "value": !secret floor_heat_temp_normal
+        }
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.thermostat_music_room_heating
+        operation_mode: "heat"

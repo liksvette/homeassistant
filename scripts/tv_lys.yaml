@@ -1,0 +1,20 @@
+tv_lys:
+  sequence:
+    - service: light.turn_on
+      entity_id: light.stuehyttalere
+      data:
+        brightness_pct: 20
+        rgb_color: [103,114,254]
+        transition: 10
+    - service: light.turn_on
+      entity_id: light.stue
+      data:
+        brightness_pct: 30
+        color_temp: !secret stue_color_high
+        transition: 10
+    - service: automation.turn_off
+      entity_id:
+        - automation.lys_stua_lav
+        - automation.lys_stua_pa
+        - automation.lys_kjokkenet_pa
+        - automation.lys_spisebordet_pa

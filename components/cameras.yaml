@@ -1,0 +1,6 @@
+  # - platform: synology
+  #   url: syno_ip
+  #   username: !secret syno_user
+  #   password: !secret syno_pass
+  #   verify_ssl: False
+  - platform: skybell

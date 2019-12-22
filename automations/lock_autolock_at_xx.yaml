@@ -1,0 +1,13 @@
+# - id: "autolås kl 19" #låser døra automatisk etter kl 19
+#  alias: "Autolock on"
+#  trigger:
+#    platform: time
+#    at: '19:00:00'
+#  action:
+#    service: zwave.set_config_parameter
+#    data_template: {
+#      "node_id": 10,
+#      "parameter": 1,
+#      "size": 1,
+#      "value": 1
+#      }

@@ -1,0 +1,11 @@
+morgenlys_gang:
+  sequence:
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.nightlight_mode
+    - service: light.turn_on
+      entity_id: group.gang_lys
+      data:
+        brightness_pct: !secret gang_morgenlys_brightness
+        # color_temp: !secret gang_morgenlys_color
+        transition: !secret gang_morgenlys_transition

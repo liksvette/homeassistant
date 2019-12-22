@@ -1,0 +1,19 @@
+- id: "Aquarium: fill tank"
+  alias: "Aquarium: fill tank"
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.water_tank_sensor_distance
+      above: 0.2
+      for:
+        hours: 1
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.osmosis_mode
+        state: 'on'
+  action:
+    service: switch.turn_on
+    entity_id:  switch.power_plug_1_osmosis_switch
+      # service: light.turn_on
+      # entity_id: light.stue_bolle_1

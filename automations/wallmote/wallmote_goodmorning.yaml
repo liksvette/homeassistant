@@ -1,0 +1,11 @@
+# - id: 'Wallmote: god morgen'
+#   alias: 'Wallmote: god morgen'
+#   trigger:
+#     - event_type: zwave.scene_activated
+#       platform: event
+#       event_data:
+#         entity_id: zwave.wallmote_entre
+#         scene_id: 2
+#         scene_data: 0
+#   action:
+#     service: script.tilbakestill

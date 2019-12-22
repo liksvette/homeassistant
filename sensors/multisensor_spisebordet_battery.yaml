@@ -1,0 +1,34 @@
+  # - platform: template
+  #   sensors:
+  #     multisensor_spisebordet_battery:
+  #       value_template: >-
+  #         {%- if states.zwave.multisensor_spisebordet -%}
+  #           {{ states.zwave.multisensor_spisebordet.attributes.battery_level }}
+  #         {%- else -%}
+  #           n/a
+  #         {%- endif -%}
+  #       unit_of_measurement: '%'
+  #       entity_id: zwave.multisensor_spisebordet
+  #       friendly_name: "Battery Multisensor Spisebordet"
+
+# - platform: template
+#   sensors:
+#     multisensor_spisebordet_battery:
+#       value_template: '{{ states.zwave.multisensor_spisebordet.attributes.battery_level }}'
+#       friendly_name: 'Battery Multisensor Spisebordet'
+#       entity_id: zwave.multisensor_spisebordet
+#       unit_of_measurement: '%'
+#       icon_template: >-
+#         {% set battery_level = states('sensor.multisensor_spisebordet_battery')|int('unknown') %}
+#         {% set battery_round = (battery_level|int / 10)|int * 10 %}
+#         {% if battery_level == 'unknown' %}
+#           mdi:battery-unknown
+#         {% else %}
+#           {% if battery_round >= 100 %}
+#             mdi:battery
+#           {% elif battery_round > 0 %}
+#             mdi:battery-{{ battery_round }}
+#           {% else %}
+#             mdi:battery-alert
+#           {% endif %}
+#         {% endif %}

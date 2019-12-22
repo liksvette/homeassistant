@@ -1,0 +1,14 @@
+- id: "Lys: stua lav"
+  alias: "Lys: stua lav"
+  trigger:
+    - platform: state
+      entity_id: sensor.multisensor_living_room_burglar
+      for:
+        minutes: 60
+      to: '0'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: group.stue_lys
+        brightness_pct: !secret brightness_low
+        transition: !secret transition_low

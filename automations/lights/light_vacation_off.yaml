@@ -1,0 +1,8 @@
+- id: "Lys: ferielys av"
+  alias: "Lys: ferielys av"
+  trigger:
+    - platform: time
+      at: '23:54:23'
+  action:
+    service: light.turn_off
+    entity_id: group.lys_forste_etasje

@@ -1,0 +1,9 @@
+  - platform: template
+    sensors:
+      garage_humidity_difference:
+        value_template: '{{ state_attr("weather.met_no", "humidity") - ( states("sensor.garage_sensor_humidity")|int ) }}'
+        friendly_name: "Luftfuktighet ute vs garasje"
+        entity_id:
+          - sensor.garage_sensor_humidity
+          - weather.met_no
+        unit_of_measurement: 'pp.'

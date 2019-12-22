@@ -1,0 +1,9 @@
+jakob_fade_nattlys: 
+  sequence:
+    - delay: 00:01
+    - wait_template: "{{ states ('sensor.jakobdimmer_counter') | int > 900 }}"
+    - service: light.turn_on
+      entity_id: light.jakobs_rom
+      data:
+        brightness: 1
+        transition: 300

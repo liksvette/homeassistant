@@ -1,0 +1,15 @@
+- id: "Lys: Jakob-lys autoav" # Skru av lyset til Jakob etter 30 minutters inaktivitet mellom kl 8-19
+  alias: "Lys: Jakoblys av på dagtid"
+  trigger:
+    - platform: state
+      entity_id: sensor.jakobdimmer_updated
+    - platform: time
+      at: '08:01:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        after: '08:00:00'
+        before: '19:00:00'
+  action:
+    service: script.jakob_lys_autoav

@@ -1,0 +1,11 @@
+- id: "Cover: lukk garasjen etter 30 min"
+  alias: "Cover: Lukk garasjen etter 30 min"
+  trigger:
+    platform: state
+    entity_id: cover.garage_door_switch
+    from: closed
+    to: open
+    for:
+      minutes: 30
+  action:
+    service: script.sikker_garasjelukker

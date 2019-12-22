@@ -1,0 +1,15 @@
+- id: "Lys: spisebordet lav"
+  alias: "Lys: spisebordet lav"
+  trigger:
+    - platform: state
+      entity_id: sensor.multisensor_dining_table_burglar
+      for:
+        minutes: 20
+      # from: '8'
+      to: '0'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.spisebordet
+        brightness_pct: !secret brightness_low
+        transition: !secret transition_low

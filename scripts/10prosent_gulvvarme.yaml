@@ -1,0 +1,14 @@
+10prosent_gulvvarme:
+  sequence:
+    - service: zwave.set_config_parameter
+      data_template: {
+        "node_id": 14,
+        "parameter": 9,
+        "value": 1
+        }
+    - service: zwave.set_config_parameter
+      data_template: {
+        "node_id": 15,
+        "parameter": 9,
+        "value": 1
+        }

@@ -1,0 +1,18 @@
+# -  platform: hue
+#    allow_hue_groups: true
+#
+-  platform: limitlessled
+   bridges:
+     - host: !secret limitlessled_ip
+       groups:
+       - number: 1
+         name: Kjøkkenbenk LED
+         type: rgbww
+# - platform: group
+#   name: "Circadian lights ct"
+#   entities:
+#     - light.taklys_1etg_gang
+#     - light.spisebordet
+#     - light.stue
+#     - light.stuehoyttalere
+#       - light.taklys_2etg_gang

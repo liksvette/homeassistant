@@ -1,0 +1,13 @@
+# testnotification:
+#   sequence:
+#     - service: notify.ios_tommys_iphone
+#       data:
+#         title: "Wått de føkk?!?"
+#         message: "Garasjeporten er fremdeles åpen"
+#         data:
+#           push:
+#             badge: 5
+#             category: "GARASJEPORTEN"
+          # action_data:
+          #   service: light.turn_off
+          #   entity_id: light.stue

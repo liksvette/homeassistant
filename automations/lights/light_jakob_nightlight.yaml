@@ -1,0 +1,13 @@
+- id: "Lys: Jakob-lys nattsenking" #Skrur ned lyset til 1% etter kl 19
+  alias: "Lys: Jakob-lys nattsenking"
+  trigger:
+    - platform: state
+      entity_id: sensor.jakobdimmer_updated
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        after: '19:00:01'
+        before: '07:59:59'
+  action:
+    service: script.jakob_fade_nattlys

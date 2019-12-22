@@ -1,0 +1,7 @@
+- platform: template
+  sensors:
+    water_tank_liter:
+      value_template: '{{ (  17.748 - ( 6.12 * states.sensor.water_tank_sensor_distance.state|float  )  * 10 )|round(1) }}'
+      friendly_name: 'Vann i karet'
+      entity_id: sensor.water_tank_sensor_distance
+      unit_of_measurement: 'liter'

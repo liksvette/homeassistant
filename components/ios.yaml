@@ -1,0 +1,11 @@
+  push:
+    categories:
+      - name: garasjeporten
+        identifier: "GARASJEPORTEN"
+        actions:
+          - identifier: "RETRY"
+            title: "Prøv på nytt"
+            authenticationRequired: yes
+            destructive: true
+      # - name: batteri-sensorer
+        # identifier: "BATTERI"

@@ -1,0 +1,6 @@
+- platform: template
+  sensors:
+    jakobdimmer_counter:
+      value_template: '{% if states.sensor.jakobdimmer_updated.last_updated is undefined %}{{"00:00:00"}}{% else %}{{ ((as_timestamp(states.sensor.date_time.last_updated)-as_timestamp(states.sensor.jakobdimmer_updated.last_updated))|int) }}{% endif %}'
+      entity_id:
+        - sensor.date_time

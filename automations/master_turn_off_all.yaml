@@ -1,0 +1,47 @@
+- id: "Master: Skru av alt"
+  alias: "Master: Skru av alt"
+  trigger:
+    - platform: state
+      entity_id: group.de_voksne
+      to: 'not home'
+      for:
+        minutes: 15
+    - platform: state
+      entity_id: sensor.multisensor_living_room_burglar
+      for:
+        minutes: 15
+     # from: '8'
+      to: '0'
+    - platform: state
+      entity_id: sensor.multisensor_dining_table_burglar
+      for:
+        minutes: 15
+      # from: '8'
+      to: '0'
+    - platform: state
+      entity_id: sensor.multisensor_kitchen_burglar
+      for:
+        minutes: 15
+      # from: '8'
+      to: '0'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.multisensor_dining_table_burglar
+        state: '0'
+      - condition: state
+        entity_id: sensor.multisensor_kitchen_burglar
+        state: '0'
+      - condition: state
+        entity_id: sensor.multisensor_living_room_burglar
+        state: '0'
+      - condition: state
+        entity_id: group.de_voksne
+        state: 'not home'
+  action:
+    - service: script.god_natt
+    - service: light.turn_off
+      entity_id: light.kjkken_sokkellys
+    - service: light.turn_off
+      entity_id: group.lys_andre_etasje

@@ -1,0 +1,15 @@
+- id: "Lys: Jakob mørk dør åpne"
+  alias: "Lys: Jakob mørk dør åpne"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_jakob_sensor
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.nightlight_mode
+        state: 'on'
+  action:
+    service: light.turn_off
+    entity_id: light.taklys_2etg_gang

@@ -1,0 +1,9 @@
+- id: "Climate: Garage Fan Off"
+  alias: "Climate: Garage Fan Off"
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.garage_humidity_difference
+    above: 0
+  action:
+    service: switch.turn_off
+    entity_id: switch.garage_fan_switch

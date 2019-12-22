@@ -1,0 +1,19 @@
+- id: "Lys: kjøkkenet på"
+  alias: "Lys: kjøkkenet på"
+  trigger:
+    - platform: state
+      entity_id: sensor.multisensor_kitchen_burglar
+      to: '8'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.kjokkenet
+        brightness_pct: !secret brightness_high
+        transition: !secret transition_high
+        # color_temp: !secret kjkken_color_temp_high
+    - service: light.turn_on
+      data:
+        entity_id: light.kjkken_sokkellys
+        brightness_pct: !secret brightness_high
+        transition: !secret transition_high
+        # color_temp: !secret kjkken_color_temp_high

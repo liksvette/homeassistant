@@ -1,0 +1,6 @@
+  - platform: entur_public_transport
+    stop_ids:
+    #  - 'NSR:StopPlace:5994'
+      - 'NSR:Quay:10995'
+    # - 'NSR:StopPlace:5995'
+      - 'NSR:Quay:11000'

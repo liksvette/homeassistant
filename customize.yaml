@@ -1,0 +1,129 @@
+###show debug groups###
+group.all_lights:
+  hidden: false
+  friendly_name: Alle lys
+group.all_scripts:
+  hidden: false
+group.all_automations:
+  hidden: false
+group.all_switches:
+  hidden: false
+group.all_covers:
+  hidden: false
+group.all_locks:
+  hidden: false
+group.all_vacuum_cleaners:
+  hidden: False
+
+script.tilbakestill:
+  icon: mdi:emoticon-happy
+  friendly_name: Tilbakestill
+script.god_natt:
+  icon: mdi:sleep
+  friendly_name: God natt
+switch.garasjelys_switch:
+  friendly_name: Garasjelys
+  icon: mdi:lightbulb
+script.tv_lys:
+  friendly_name: TV-lys
+  icon: mdi:television-classic
+
+lock.front_door_lock_locked:
+  friendly_name: "Inngangsdøra"
+cover.garage_door_switch:
+  friendly_name: "Garasjeporten"
+switch.library_shelf_light_switch:
+  friendly_name: "Bibliotek"
+
+###Bilen###
+binary_sensor.WVWZZZAUZFW902401_parking_light:
+    friendly_name: VW Car Parking Lights
+binary_sensor.WVWZZZAUZFW902401_external_power:
+    friendly_name: VW Car External Power Connected
+binary_sensor.WVWZZZAUZFW902401_climatisation_without_external_power:
+    friendly_name: VW Car Climatisation Without External Power
+device_tracker.WVWZZZAUZFW902401:
+    friendly_name: VW Car Location
+lock.WVWZZZAUZFW902401_doors_locked:
+    friendly_name: VW Car Locked
+    assumed_state: false
+lock.WVWZZZAUZFW902401_trunk_locked:
+    friendly_name: VW Trunk Locked
+    assumed_state: false
+sensor.WVWZZZAUZFW902401_battery_level:
+    friendly_name: VW Car Battery Level
+sensor.WVWZZZAUZFW902401_fuel_level:
+    friendly_name: VW Car Fuel Level
+sensor.WVWZZZAUZFW902401_charge_max_ampere:
+    friendly_name: VW Charge max ampere
+sensor.WVWZZZAUZFW902401_charging_time_left:
+    friendly_name: VW Car Charging time left
+sensor.WVWZZZAUZFW902401_odometer:
+    friendly_name: VW Car Odometer
+sensor.WVWZZZAUZFW902401_electric_range:
+    friendly_name: VW Car Electric Range Left
+sensor.WVWZZZAUZFW902401_combustion_range:
+    friendly_name: VW Car Combustion Range Left
+sensor.WVWZZZAUZFW902401_combined_range:
+    friendly_name: VW Car Combined Range Left
+sensor.WVWZZZAUZFW902401_last_connected:
+    friendly_name: VW Car Last Connected
+sensor.WVWZZZAUZFW902401_service_inspection:
+    friendly_name: VW Car Next Service
+sensor.WVWZZZAUZFW902401_climatisation_target_temperature:
+    friendly_name: VW Car Climatisation Target Temperature
+switch.WVWZZZAUZFW902401_charging:
+    friendly_name: VW Car Charging
+    assumed_state: false
+switch.WVWZZZAUZFW902401_climatisation:
+    friendly_name: VW Car Climatisation
+    assumed_state: false
+switch.WVWZZZAUZFW902401_window_heater:
+    friendly_name: VW Car Window Heating
+    assumed_state: false
+# media_player.forsterker_stua_zone_2:
+#    hidden: true
+# #IDLock 101 hides:
+# sensor.id_lock_id_lock_101_alarm_level:
+#    hidden: true
+# sensor.id_lock_id_lock_101_alarm_type:
+#    hidden: true
+# sensor.id_lock_id_lock_101_burglar:
+#    hidden: true
+# sensor.id_lock_id_lock_101_emergency:
+#    hidden: true
+# sensor.id_lock_id_lock_101_sourcenodeid:
+#    hidden: true
+# # Multisensor hides:
+# sensor.multisensor_kitchen_alarm_level:
+#   hidden: true
+# sensor.multisensor_kitchen_alarm_type:
+#   hidden: true
+# sensor.multisensor_kitchen_sourcenodeid:
+#   hidden: true
+# sensor.multisensor_dining_table_alarm_level:
+#   hidden: true
+# sensor.multisensor_dining_table_alarm_type:
+#   hidden: true
+# sensor.multisensor_dining_table_sourcenodeid:
+#   hidden: true
+# sensor.multisensor_living_room_alarm_level:
+#   hidden: true
+# sensor.multisensor_living_room_alarm_type:
+#   hidden: true
+# sensor.multisensor_living_room_sourcenodeid:
+#   hidden: true
+#
+# # div sensor hides:
+# sensor.date_time:
+#   hidden: true
+# sensor.jakobdimmer_counter:
+#   hidden: true
+# sensor.jakobdimmer_state:
+#   hidden: true
+# sensor.jakobdimmer_updated:
+#   hidden: true
+# #climate.termostat_kjkken_og_spisebord_energy_heat:
+# #  friendly_name: "climate.termostat_kjkken_og_spisebord_eco"
+# #climate.termostat_stue_og_gang_energy_heat:
+# #  friendly_name: "climate.termostat_stue_og_gang_eco"

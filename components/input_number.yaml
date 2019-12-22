@@ -1,0 +1,6 @@
+# minimum_heat_1st_floor:
+#   name: Ekstra gulvvarme
+#   min: 0
+#   max: 10.8
+#   step: 3.6
+#   unit_of_measurement: kW
